@@ -1,0 +1,55 @@
+.two-panel{
+    display: flex;
+    //max-height: 100vh !important;
+    //border: 1px solid red;
+    .section{
+        width: 50%;
+        //border: 1px solid blue;
+        color: #fff;
+        
+        margin-top: 1em;
+        &__title, &__title-small{
+            text-align: center;
+        }
+        &__title{
+            font-size: 2em;
+            font-family: $primaryFont !important;
+            font-weight: bold;
+            
+        }
+        &__title-small{
+            font-size: .7em;
+        }
+
+    }
+    
+    
+}
+
+
+#rias, #haruhi {
+    //position: absolute;
+}
+
+#rias {
+    //position: relative;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-width: 400px;
+    /*@media (max-width: 1199px) {
+        max-width: 400px;
+    }*/
+    
+    @media (min-width: 1200px){
+        max-width: 600px;
+    }
+}
+#haruhi{
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    @media (max-width: 1024px) {
+        max-width: 300px;
+    }
+}

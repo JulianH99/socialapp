@@ -1,0 +1,49 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.body {
+    font-family: sans-serif;
+    
+}
+
+#app {
+    background: #62559F;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+    &:focus, &:hover{
+        text-decoration: none;
+    }
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+input, select {
+    border: none;
+    outline: none;
+    &:focus, &:hover {
+        border: none;
+        outline: none;
+    }
+}
+
+button {
+    border: none;
+    outline: none;
+    &:focus{
+        outline: none;
+    }
+}
+
+

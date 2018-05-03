@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/ImagePost.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/VideoPost.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/logreg.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_header.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/main.js</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/_base.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/register.jsp</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/profilelayout.tag</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/TextPost.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/SQLUtil.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/login.jsp</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/inc/head.tag</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/RegisterController.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_login-form.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/lib/Validator.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/Queryable.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/Authenticable.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_twopanel.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/LoginController.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/modules/profileHeader.tag</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/components/_button.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/User.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Anime.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/MySQLUtil.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/BaseModel.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/modules/profilePost.tag</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/loglayout.tag</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Post.java</file>
+        </group>
+    </open-files>
+</project-private>

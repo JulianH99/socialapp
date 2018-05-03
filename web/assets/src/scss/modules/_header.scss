@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    padding-top: .5em;
+    .header__logo{
+        width: 100px;
+    }
+    span{
+        margin-left: 2em;
+        font-size: 1.3em;
+        font-family: $primaryFont;
+        color: #fff;
+    }
+}
