@@ -5,6 +5,7 @@
  */
 package models;
 
+import database.SQLUtil;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,30 +28,41 @@ public class AnimeList extends BaseModel{
     
     @Getter
     @Setter
-    private BigInteger userId;
+    private long userId;
+
+    @Getter
+    @Setter
+    private long animeId;
+    
+    public AnimeList(SQLUtil db) {
+        super(db);
+    }
 
     @Override
     public int save() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
     }
 
     @Override
     public ArrayList<BaseModel> all() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
-    public BaseModel get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public BaseModel get(long id) {
+        return null;
     }
 
     @Override
     public boolean update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
     public boolean delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
+
+    
+
 }

@@ -18,14 +18,6 @@ public interface Queryable<M> {
     
     public ArrayList<M> all();
     
-    /**
-     *
-     * @param columnName
-     * @param value
-     * @return
-     */
-    public boolean exists(String columnName, String value);
-    
     public M get(long id);
     
     public boolean update();

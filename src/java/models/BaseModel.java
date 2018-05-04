@@ -24,4 +24,8 @@ abstract public class BaseModel implements Queryable<BaseModel>{
      */
     protected SQLUtil db;
     
+    public BaseModel(SQLUtil db) {
+        this.db = db;
+    } 
+    
 }

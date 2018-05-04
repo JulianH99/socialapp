@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import models.interfaces.Authenticable;
+import models.interfaces.HasExistence;
 import lombok.Getter;
 import lombok.Setter;
 import lib.BCrypt;
@@ -25,7 +26,7 @@ import lib.BCrypt;
  * @see models.BaseModel
  * @see models.interfaces.Authenticable
  */
-public class User extends BaseModel implements Authenticable{
+public class User extends BaseModel implements Authenticable, HasExistence{
  
     
     @Getter
@@ -53,7 +54,7 @@ public class User extends BaseModel implements Authenticable{
     private Date registerDate;
 
     public User(SQLUtil db) {
-        this.db = db;
+        super(db);
     }
     
 
@@ -64,7 +65,6 @@ public class User extends BaseModel implements Authenticable{
      */
     @Override
     public int save() {
-        
         try {
             
             String saveQuery = "insert into users (name, password, email"
@@ -132,7 +132,7 @@ public class User extends BaseModel implements Authenticable{
     public boolean exists(String columnName, String value) {
         try{
             
-            String query = "select count(*) from users where " + columnName + 
+            String query = "select * from users where " + columnName + 
                     " = ?";
             
             this.db.setQuery(query);
@@ -143,7 +143,11 @@ public class User extends BaseModel implements Authenticable{
             
             ResultSet rs = stmt.executeQuery();
             
-            return rs.next();
+            if(rs.next()){
+                this.setId(rs.getLong("id"));
+                return true;
+            }
+            return false;
             
         }
         catch(SQLException ex) {
@@ -157,7 +161,7 @@ public class User extends BaseModel implements Authenticable{
     @Override
     public User get(long id) {
         try {
-            String getQuery = "select * from user where id = ?";
+            String getQuery = "select * from users where id = ?";
             
             this.db.setQuery(getQuery);
             
@@ -189,19 +193,58 @@ public class User extends BaseModel implements Authenticable{
 
     @Override
     public boolean update() {
-        return false;
+        try {
+            String query = "update users set name = ?, password = ?,"
+                    + "email = ? where id = ?";
+            
+            this.db.setQuery(query);
+            
+            PreparedStatement stmt = this.db.getStatement();
+            
+            stmt.setString(1, this.name);
+            stmt.setString(2, this.hashPassword(this.password));
+            stmt.setString(3, this.email);
+            stmt.setLong(4, this.id);
+            
+            return stmt.execute();
+        }
+        catch(SQLException ex){
+            return false;
+        }
+        finally{
+            this.db.close();
+        }
     }
 
     @Override
     public boolean delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            String query = "delete from users where id = ?";
+            
+            this.db.setQuery(query);
+            
+            PreparedStatement stmt = this.db.getStatement();
+            
+            stmt.setLong(1, this.id);
+            
+            return stmt.execute();
+        }
+        catch(SQLException ex) {
+            return false;
+        }
+        finally{
+            this.db.close();
+        }
     }
 
     @Override
     public boolean login(String username, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setName(username);
+        
+        return this.exists("username", this.name) && 
+                this.checkPassword(password);
     }
-
+    
     @Override
     public boolean register() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -219,7 +262,26 @@ public class User extends BaseModel implements Authenticable{
 
     @Override
     public boolean checkPassword(String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            String query = "select password from users where id = ?";
+            
+            this.db.setQuery(query);
+            
+            PreparedStatement stmt = this.db.getStatement();
+            
+            stmt.setLong(1, this.id);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next()) {
+                String hashedPassword = rs.getString("password");
+                return BCrypt.checkpw(this.password, hashedPassword);
+            }
+            return false;
+        }
+        catch(SQLException ex){
+            return false;
+        }
     }
 
     
