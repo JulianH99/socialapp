@@ -6,6 +6,7 @@
 
 package controllers;
 
+import database.MySQLUtil;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -58,7 +59,7 @@ public class LoginController extends HttpServlet {
         }
         
         
-        User user = new User();
+        User user = new User(new MySQLUtil());
         
         if(user.login(username, password)) {
             request.getRequestDispatcher("pagees/user/home.jsp")

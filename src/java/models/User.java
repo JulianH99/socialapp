@@ -52,6 +52,10 @@ public class User extends BaseModel implements Authenticable, HasExistence{
     @Getter
     @Setter
     private Date registerDate;
+    
+    @Getter
+    @Setter
+    private String picturePath;
 
     public User(SQLUtil db) {
         super(db);
@@ -68,7 +72,8 @@ public class User extends BaseModel implements Authenticable, HasExistence{
         try {
             
             String saveQuery = "insert into users (name, password, email"
-                    + ", register_date, gender) values (?, ?, ?, ?)";
+                    + ", register_date, gender, picture_path)"
+                    + " values (?, ?, ?, ?, \'default.png\')";
             
             this.db.setQuery(saveQuery);
             
@@ -195,7 +200,7 @@ public class User extends BaseModel implements Authenticable, HasExistence{
     public boolean update() {
         try {
             String query = "update users set name = ?, password = ?,"
-                    + "email = ? where id = ?";
+                    + "email = ?, picture_path = ? where id = ?";
             
             this.db.setQuery(query);
             
@@ -204,7 +209,9 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             stmt.setString(1, this.name);
             stmt.setString(2, this.hashPassword(this.password));
             stmt.setString(3, this.email);
-            stmt.setLong(4, this.id);
+            stmt.setString(4, this.picturePath);
+            stmt.setLong(5, this.id);
+            
             
             return stmt.execute();
         }

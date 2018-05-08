@@ -23,7 +23,7 @@
             </header>
             <jsp:doBody></jsp:doBody>
         </div>
-        <script src="./assets/dist/main.js"></script>
+        
     </body>
     
 </html>

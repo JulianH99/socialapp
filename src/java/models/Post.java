@@ -5,6 +5,7 @@
  */
 package models;
 
+import database.SQLUtil;
 import java.math.BigInteger;
 import java.util.Date;
 import lombok.Getter;
@@ -43,6 +44,7 @@ public abstract class Post extends BaseModel{
     @Setter
     protected boolean question;
 
-    public Post() {
+    public Post(SQLUtil db) {
+        super(db);
     }
 }

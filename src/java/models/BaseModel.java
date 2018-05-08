@@ -5,9 +5,6 @@
  */
 package models;
 
-import models.interfaces.Queryable;
-import database.SQLUtil;
-
 /**
  *
  * Base class used by classes that interact with database
@@ -16,16 +13,6 @@ import database.SQLUtil;
  * @see models.interfaces.Queryable
  * @author julian
  */
-abstract public class BaseModel implements Queryable<BaseModel>{
-    
-    /**
-     * database connection
-     * @see database.SQLUtil
-     */
-    protected SQLUtil db;
-    
-    public BaseModel(SQLUtil db) {
-        this.db = db;
-    } 
+abstract public class BaseModel{
     
 }

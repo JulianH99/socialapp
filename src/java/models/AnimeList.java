@@ -7,6 +7,9 @@ package models;
 
 import database.SQLUtil;
 import java.math.BigInteger;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -33,36 +36,6 @@ public class AnimeList extends BaseModel{
     @Getter
     @Setter
     private long animeId;
+   
     
-    public AnimeList(SQLUtil db) {
-        super(db);
-    }
-
-    @Override
-    public int save() {
-        return 0;
-    }
-
-    @Override
-    public ArrayList<BaseModel> all() {
-        return null;
-    }
-
-    @Override
-    public BaseModel get(long id) {
-        return null;
-    }
-
-    @Override
-    public boolean update() {
-        return false;
-    }
-
-    @Override
-    public boolean delete() {
-        return false;
-    }
-
-    
-
 }

@@ -7,6 +7,7 @@
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
 <%@taglib prefix="inc" tagdir="/WEB-INF/tags/inc" %>
 <%@taglib prefix="module" tagdir="/WEB-INF/tags/modules" %>
+<%@attribute name="user" required="true" type="models.User" %>
 <%-- The list of normal or fragment attributes can be specified here: --%>
 
 <html>
@@ -14,6 +15,9 @@
     <body>
         <div id="app">
             <module:profileHeader user="${user}"></module:profileHeader>
+            <main>
+                <jsp:doBody/>
+            </main>
         </div>
     </body>
     

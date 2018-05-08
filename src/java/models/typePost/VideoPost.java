@@ -5,6 +5,7 @@
  */
 package models.typePost;
 
+import database.SQLUtil;
 import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,9 +26,11 @@ public class VideoPost extends Post{
     @Setter
     private String miniature;
 
-    public VideoPost() {
+    public VideoPost(SQLUtil db) {
+        super(db);
     }
 
+    
     @Override
     public int save() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -39,11 +42,6 @@ public class VideoPost extends Post{
     }
 
     @Override
-    public BaseModel get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public boolean update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -51,6 +49,11 @@ public class VideoPost extends Post{
     @Override
     public boolean delete() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public BaseModel get(long id) {
+        return null;
     }
     
 }

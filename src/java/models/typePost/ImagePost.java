@@ -5,6 +5,7 @@
  */
 package models.typePost;
 
+import database.SQLUtil;
 import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,12 +17,16 @@ import models.Post;
  * @author Juan
  */
 public class ImagePost extends Post{
+    
     @Getter
     @Setter
     private String imagePath;
 
-    public ImagePost() {
+    public ImagePost(SQLUtil db) {
+        super(db);
     }
+
+    
 
     @Override
     public int save() {
@@ -33,11 +38,7 @@ public class ImagePost extends Post{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public BaseModel get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     @Override
     public boolean update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -46,6 +47,11 @@ public class ImagePost extends Post{
     @Override
     public boolean delete() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public BaseModel get(long id) {
+        return null;
     }
     
 }

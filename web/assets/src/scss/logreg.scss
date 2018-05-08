@@ -8,16 +8,19 @@
 
 
 // modules
+.auth-container{
+    @import "./modules/header";
+    @import "./modules/twopanel";
+    @import "./modules/login-form";
+}
 
-@import "./modules/header";
-@import "./modules/twopanel";
-@import "./modules/login-form";
+
 
 #app{
     //height: 100vh;
 }
 
-body{
+.auth-body{
     //height: 100vh;
     min-height: 100vh;
     background: #62559F !important;
