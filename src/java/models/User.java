@@ -57,8 +57,8 @@ public class User extends BaseModel implements Authenticable, HasExistence{
     @Setter
     private String picturePath;
 
-    public User(SQLUtil db) {
-        super(db);
+    public User(SQLUtil dataSource) {
+        super(dataSource);
     }
     
 
@@ -67,7 +67,7 @@ public class User extends BaseModel implements Authenticable, HasExistence{
      * @return number of affected rows. If user was saved should be greater
      * than 0
      */
-    @Override
+    
     public int save() {
         try {
             
@@ -75,9 +75,9 @@ public class User extends BaseModel implements Authenticable, HasExistence{
                     + ", register_date, gender, picture_path)"
                     + " values (?, ?, ?, ?, \'default.png\')";
             
-            this.db.setQuery(saveQuery);
+            this.dataSource.setQuery(saveQuery);
             
-            PreparedStatement stmt = db.getStatement();
+            PreparedStatement stmt = dataSource.getStatement();
             
             stmt.setString(1, this.name);
             stmt.setString(2, this.password);
@@ -93,20 +93,19 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             return -1;
         }
         finally{
-            this.db.close();
+            this.dataSource.close();
         }
     }
 
-    @Override
     public ArrayList all() {
         try{
             String query = "select * from users";
             
             User tmpUser = new User(null);
             
-            this.db.setQuery(query);
+            this.dataSource.setQuery(query);
             
-            PreparedStatement stmt = this.db.getStatement();
+            PreparedStatement stmt = this.dataSource.getStatement();
             
             ResultSet rs = stmt.executeQuery();
             
@@ -129,20 +128,20 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             return new ArrayList<>();
         }
         finally{
-            this.db.close();
+            this.dataSource.close();
         }
     }
     
-    @Override
+    
     public boolean exists(String columnName, String value) {
         try{
             
             String query = "select * from users where " + columnName + 
                     " = ?";
             
-            this.db.setQuery(query);
+            this.dataSource.setQuery(query);
             
-            PreparedStatement stmt = this.db.getStatement();
+            PreparedStatement stmt = this.dataSource.getStatement();
             
             stmt.setString(1, value);
             
@@ -159,23 +158,23 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             return false;
         }
         finally{
-            this.db.close();
+            this.dataSource.close();
         }
     }
 
-    @Override
+    
     public User get(long id) {
         try {
             String getQuery = "select * from users where id = ?";
             
-            this.db.setQuery(getQuery);
+            this.dataSource.setQuery(getQuery);
             
-            PreparedStatement stmt = this.db.getStatement();
+            PreparedStatement stmt = this.dataSource.getStatement();
             
             ResultSet rs = stmt.executeQuery();
             
             // resultant user
-            User user = new User(this.db);
+            User user = new User(this.dataSource);
             
             if(rs.next()){
                 user.setId(id);
@@ -192,19 +191,19 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             return null;
         }
         finally {
-            this.db.close();
+            this.dataSource.close();
         }
     }
 
-    @Override
+    
     public boolean update() {
         try {
             String query = "update users set name = ?, password = ?,"
                     + "email = ?, picture_path = ? where id = ?";
             
-            this.db.setQuery(query);
+            this.dataSource.setQuery(query);
             
-            PreparedStatement stmt = this.db.getStatement();
+            PreparedStatement stmt = this.dataSource.getStatement();
             
             stmt.setString(1, this.name);
             stmt.setString(2, this.hashPassword(this.password));
@@ -219,18 +218,18 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             return false;
         }
         finally{
-            this.db.close();
+            this.dataSource.close();
         }
     }
 
-    @Override
+    
     public boolean delete() {
         try{
             String query = "delete from users where id = ?";
             
-            this.db.setQuery(query);
+            this.dataSource.setQuery(query);
             
-            PreparedStatement stmt = this.db.getStatement();
+            PreparedStatement stmt = this.dataSource.getStatement();
             
             stmt.setLong(1, this.id);
             
@@ -240,11 +239,11 @@ public class User extends BaseModel implements Authenticable, HasExistence{
             return false;
         }
         finally{
-            this.db.close();
+            this.dataSource.close();
         }
     }
 
-    @Override
+    
     public boolean login(String username, String password) {
         this.setName(username);
         
@@ -252,29 +251,29 @@ public class User extends BaseModel implements Authenticable, HasExistence{
                 this.checkPassword(password);
     }
     
-    @Override
+    
     public boolean register() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public void logout() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public String hashPassword(String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public boolean checkPassword(String password) {
         try{
             String query = "select password from users where id = ?";
             
-            this.db.setQuery(query);
+            this.dataSource.setQuery(query);
             
-            PreparedStatement stmt = this.db.getStatement();
+            PreparedStatement stmt = this.dataSource.getStatement();
             
             stmt.setLong(1, this.id);
             

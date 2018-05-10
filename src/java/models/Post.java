@@ -5,8 +5,7 @@
  */
 package models;
 
-import database.SQLUtil;
-import java.math.BigInteger;
+
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,14 +14,14 @@ import lombok.Setter;
  *
  * @author Juan
  */
-public abstract class Post extends BaseModel{
+public class Post extends BaseModel{
     @Getter
     @Setter
-    protected BigInteger id;
+    protected long id;
     
     @Getter
     @Setter
-    protected BigInteger userId;
+    protected long userId;
     
     @Getter
     @Setter
@@ -38,13 +37,32 @@ public abstract class Post extends BaseModel{
     
     @Getter
     @Setter
-    protected BigInteger animeId;
-    
+    protected long animeId;
+   
     @Getter
     @Setter
     protected boolean question;
-
-    public Post(SQLUtil db) {
-        super(db);
+    
+    /**
+     * 
+     */
+    public static final int TEXT = 1;
+    
+    public static final int IMAGE = 2;
+    
+    public static final int VIDEO = 3;
+    
+    public Post() {
+        
+    }
+    
+    public Post(Post copy) {
+        this.animeId = copy.getAnimeId();
+        this.id = copy.getId();
+        this.userId = copy.getUserId();
+        this.content = copy.getContent();
+        this.pubDate = copy.getPubDate();
+        this.question = copy.isQuestion();
+        this.score = copy.getScore();
     }
 }

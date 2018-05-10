@@ -12,10 +12,6 @@ import java.util.List;
  * @author julian
  * @param <M>
  */
-public interface CanGet<M> {
-    
-    public List<M> all();
-    
-    public M get(long id);
+public interface CanGet<M> extends CanGetSingle<M>, CanGetAll<M> {
     
 }

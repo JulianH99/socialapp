@@ -10,12 +10,12 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/logreg.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_header.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/AnimeGender.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/FullyQueryable.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/main.js</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanSave.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/_base.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/register.jsp</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/profilelayout.tag</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/TextPost.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/SQLUtil.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/login.jsp</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanUpdate.java</file>
@@ -23,6 +23,7 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/RegisterController.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/profile.jsp</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/home.jsp</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/PostManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_login-form.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/lib/Validator.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/Authenticable.java</file>

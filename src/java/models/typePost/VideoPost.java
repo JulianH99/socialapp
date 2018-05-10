@@ -5,17 +5,17 @@
  */
 package models.typePost;
 
-import database.SQLUtil;
-import java.util.ArrayList;
+
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import models.BaseModel;
 import models.Post;
 
 /**
  *
  * @author Juan
  */
+@NoArgsConstructor
 public class VideoPost extends Post{
     
     @Getter
@@ -26,34 +26,9 @@ public class VideoPost extends Post{
     @Setter
     private String miniature;
 
-    public VideoPost(SQLUtil db) {
-        super(db);
+
+    public VideoPost(Post copy) {
+        super(copy);
     }
 
-    
-    @Override
-    public int save() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ArrayList<BaseModel> all() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public BaseModel get(long id) {
-        return null;
-    }
-    
 }

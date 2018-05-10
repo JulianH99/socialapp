@@ -12,9 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import models.Anime;
-import models.AnimeGender;
 import models.interfaces.CanGet;
-import models.interfaces.CanSave;
 
 /**
  *

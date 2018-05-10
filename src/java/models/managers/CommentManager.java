@@ -7,7 +7,10 @@ package models.managers;
 
 import database.SQLUtil;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import models.Comment;
 import models.interfaces.CanSave;
 import models.interfaces.CanUpdate;
@@ -78,7 +81,59 @@ implements CanSave<Comment>, CanUpdate<Comment>, CanDelete{
 
     @Override
     public boolean delete(long id) {
-        return false;
+        try{
+            String query = "delete from comments where id = ?";
+            
+            this.dataSource.setQuery(query);
+            
+            PreparedStatement stmt = this.dataSource.getStatement();
+            
+            stmt.setLong(1, id);
+            
+            return stmt.execute();
+        }
+        catch(SQLException ex) {
+            return false;
+        }
+        finally {
+            this.dataSource.close();
+        }
     }
+    
+    
+    public List<Comment> getFor(int postId) {
+        try {
+            String sql = "{ call getCommentsFor(?) }";
+            List<Comment> comments = new ArrayList<>();
+            Comment tmpComment = new Comment();
+            
+            this.dataSource.setQuery(sql);
+            
+            PreparedStatement stmt = this.dataSource.getStatement();
+            
+            stmt.setLong(1, postId);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()) {
+                tmpComment.setContent(rs.getString("content"));
+                tmpComment.setId(rs.getLong("id"));
+                tmpComment.setPostId(rs.getLong("post_id"));
+                tmpComment.setUserId(rs.getLong("user_id"));
+                tmpComment.setUserScore(rs.getInt("user_score"));
+                
+                comments.add(tmpComment);
+                
+            }
+            
+            return comments;            
+        }
+        catch (SQLException ex) {
+            return new ArrayList<>();
+        }
+        finally {
+            this.dataSource.close();
+        }
+    } 
     
 }

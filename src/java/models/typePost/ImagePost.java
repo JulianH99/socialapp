@@ -5,53 +5,27 @@
  */
 package models.typePost;
 
-import database.SQLUtil;
-import java.util.ArrayList;
+
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import models.BaseModel;
 import models.Post;
 
 /**
  *
  * @author Juan
  */
+@NoArgsConstructor
 public class ImagePost extends Post{
     
     @Getter
     @Setter
-    private String imagePath;
+    private String imagePath;   
 
-    public ImagePost(SQLUtil db) {
-        super(db);
-    }
-
-    
-
-    @Override
-    public int save() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ArrayList<BaseModel> all() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    @Override
-    public boolean update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public BaseModel get(long id) {
-        return null;
+    public ImagePost(Post copy) {
+        super(copy);
     }
     
+    
+   
 }
