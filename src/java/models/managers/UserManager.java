@@ -72,7 +72,7 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
             PreparedStatement stmt = this.dataSource.getStatement();
             
             stmt.setString(1, model.getName());
-            stmt.setString(2, model.hashPassword(model.getPassword()));
+            stmt.setString(2, this.hashPassword(model.getPassword()));
             stmt.setString(3, model.getEmail());
             stmt.setString(4, model.getPicturePath());
             stmt.setLong(5, model.getId());
