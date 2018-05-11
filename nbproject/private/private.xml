@@ -7,8 +7,10 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AnimeListManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/VideoPost.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Comment.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanCheckExistence.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/logreg.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_header.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanAuthenticate.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/AnimeGender.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/FullyQueryable.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/main.js</file>
@@ -26,13 +28,14 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/PostManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_login-form.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/lib/Validator.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/Authenticable.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGetSingle.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_twopanel.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AnimeManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/LoginController.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AbstractManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AnimeGenderManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/components/_button.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/UserManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanDelete.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/User.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/AnimeList.java</file>
@@ -43,8 +46,8 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/BaseModel.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/modules/profilePost.tag</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/loglayout.tag</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/HasExistence.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGet.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGetAll.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Post.java</file>
         </group>
     </open-files>

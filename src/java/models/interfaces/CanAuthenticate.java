@@ -5,17 +5,17 @@
  */
 package models.interfaces;
 
+import models.User;
+
 /**
  *
  * @author julian
  * @param <M>
  */
-public interface CanGetSingle<M> {
+public interface CanAuthenticate<M extends User> {
     
-    /**
-     * 
-     * @param id
-     * @return 
-     */
-    public M get(long id);
+    public boolean login(M user);
+    
+    public boolean register();
+    
 }

@@ -6,17 +6,26 @@
 package models.managers;
 
 import database.SQLUtil;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import lib.BCrypt;
 import models.User;
+import models.interfaces.CanAuthenticate;
 import models.interfaces.CanSave;
 import models.interfaces.CanUpdate;
 import models.interfaces.CanGetSingle;
+import models.interfaces.CanCheckExistence;
+
 
 /**
  *
  * @author julian
  */
 public class UserManager extends AbstractManager
-implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>{
+implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
+        CanCheckExistence<User>, CanAuthenticate<User>{
     
     public UserManager(SQLUtil dataSource) {
         super(dataSource);
@@ -24,17 +33,177 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>{
 
     @Override
     public boolean save(User model) {
-        return false;
+        try {
+            
+            String saveQuery = "insert into users (name, password, email"
+                    + ", register_date, gender, picture_path)"
+                    + " values (?, ?, ?, ?, \'default.png\')";
+            
+            this.dataSource.setQuery(saveQuery);
+            
+            PreparedStatement stmt = dataSource.getStatement();
+            
+            stmt.setString(1, model.getName());
+            stmt.setString(2, model.getPassword());
+            stmt.setString(3, model.getEmail());
+            stmt.setDate(4, (java.sql.Date) new Date());
+            stmt.setShort(5, model.getGender());
+            
+            return stmt.execute();
+            
+            
+        }catch(SQLException ex) {
+            
+            return false;
+        }
+        finally{
+            this.dataSource.close();
+        }
     }
 
     @Override
     public boolean update(User model) {
-        return false;
+        try {
+            String query = "update users set name = ?, password = ?,"
+                    + "email = ?, picture_path = ? where id = ?";
+            
+            this.dataSource.setQuery(query);
+            
+            PreparedStatement stmt = this.dataSource.getStatement();
+            
+            stmt.setString(1, model.getName());
+            stmt.setString(2, model.hashPassword(model.getPassword()));
+            stmt.setString(3, model.getEmail());
+            stmt.setString(4, model.getPicturePath());
+            stmt.setLong(5, model.getId());
+            
+            
+            return stmt.execute();
+        }
+        catch(SQLException ex){
+            return false;
+        }
+        finally{
+            this.dataSource.close();
+        }
     }
 
     @Override
     public User get(long id) {
-        return null;
+        try {
+            String getQuery = "select * from users where id = ?";
+            
+            this.dataSource.setQuery(getQuery);
+            
+            PreparedStatement stmt = this.dataSource.getStatement();
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            // resultant user
+            User user = new User();
+            
+            if(rs.next()){
+                user.setId(id);
+                user.setName(rs.getString("name"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                user.setRegisterDate(rs.getDate("register_date"));
+                user.setGender(rs.getShort("gender"));
+            }
+            
+            return user;
+        }
+        catch (SQLException ex) {
+            return null;
+        }
+        finally {
+            this.dataSource.close();
+        }
     }
+
+    @Override
+    public User exists(String column, Object value) {
+        try{
+            
+            String query = "select * from users where " + column + 
+                    " = ?";
+            User newUser = new User();
+            
+            this.dataSource.setQuery(query);
+            
+            PreparedStatement stmt = this.dataSource.getStatement();
+            
+            stmt.setString(1, (String) value);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            
+            
+            if (rs.next()){
+                newUser.setId(rs.getLong("id"));
+                return newUser;
+            }
+            return null;
+            
+        }
+        catch(SQLException ex) {
+            return null;
+        }
+        finally{
+            this.dataSource.close();
+        }
+    }
+
+    @Override
+    public boolean login(User user) {
+        
+        User checkedUser = this.exists("username", user.getName());
+        
+        if(checkedUser != null) {
+            return this.checkPassword(checkedUser);
+        }
+        return false;
+        
+    }
+    
+    
+    @Override
+    public boolean register() {
+        //TODO : implementar metodo de register
+        return false;
+    }
+    
+    
+    public boolean checkPassword(User user) {
+        try{
+            String query = "select password from users where id = ?";
+            
+            this.dataSource.setQuery(query);
+            
+            PreparedStatement stmt = this.dataSource.getStatement();
+            
+            stmt.setLong(1, user.getId());
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next()) {
+                String hashedPassword = rs.getString("password");
+                return BCrypt.checkpw(user.getPassword(), hashedPassword);
+            }
+            return false;
+        }
+        catch(SQLException ex){
+            return false;
+        }
+    }
+    
+    
+    public String hashPassword(String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
+
     
 }

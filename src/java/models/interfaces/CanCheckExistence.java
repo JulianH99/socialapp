@@ -8,15 +8,16 @@ package models.interfaces;
 /**
  *
  * @author julian
+ * @param <M>
  */
-public interface HasExistence {
+public interface CanCheckExistence<M> {
     
     /**
-     *
-     * @param columnName
+     * 
+     * @param column
      * @param value
-     * @return
+     * @return 
      */
-    public boolean exists(String columnName, String value);
+    public M exists(String column, Object value);
     
 }

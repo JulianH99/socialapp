@@ -5,14 +5,12 @@
  */
 package models;
 
-import database.SQLUtil;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-import models.interfaces.Authenticable;
-import models.interfaces.HasExistence;
 import lombok.Getter;
 import lombok.Setter;
 import lib.BCrypt;
@@ -57,9 +55,7 @@ public class User extends BaseModel implements Authenticable, HasExistence{
     @Setter
     private String picturePath;
 
-    public User(SQLUtil dataSource) {
-        super(dataSource);
-    }
+   
     
 
     /**
@@ -257,15 +253,7 @@ public class User extends BaseModel implements Authenticable, HasExistence{
     }
 
     
-    public void logout() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
-    public String hashPassword(String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
     public boolean checkPassword(String password) {
         try{
