@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="assets/dist/css/logreg.css">
         <title>Red Social De Otokos - Register</title>
     </head>
-    <body class="auth-body">
+    <body class="auth-body" id="auth-body">
         <div id="app" class="auth-container">
             <header>
                 <img alt="logo" src="./assets/dist/img/happy.png" class="header__logo">
@@ -128,6 +128,17 @@
                 </section>
             </div>
         </div>
+        <script src="./assets/dist/particles.min.js"></script>
+        <script>
+            particlesJS.load('auth-body', './assets/dist/particlesjs-config.json'
+                    , function() {
+                        document.querySelector('.particles-js-canvas-el')
+                                .style.setProperty("--height", 
+                        document.body.clientHeight + 'px');
+                    });
+        </script>
         <script src="./assets/dist/main.js"></script>
+        
+        
     </body>
 </html>

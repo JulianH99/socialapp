@@ -17,11 +17,9 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanSave.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/_base.scss</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/register.jsp</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/profilelayout.tag</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/SQLUtil.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/login.jsp</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanUpdate.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/inc/head.tag</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/RegisterController.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/profile.jsp</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/home.jsp</file>
@@ -40,12 +38,9 @@
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/User.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/AnimeList.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Anime.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/inc/header.tag</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/CommentManager.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/MySQLUtil.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/BaseModel.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/modules/profilePost.tag</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/WEB-INF/tags/loglayout.tag</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGet.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGetAll.java</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Post.java</file>

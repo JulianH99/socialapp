@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lib.Validator;
 import models.User;
+import models.managers.UserManager;
 
 /**
  *
@@ -59,9 +60,13 @@ public class LoginController extends HttpServlet {
         }
         
         
-        User user = new User(new MySQLUtil());
+        User user = new User();
+        user.setName(username);
+        user.setPassword(password);
         
-        if(user.login(username, password)) {
+        UserManager userManager = new UserManager(new MySQLUtil());
+        
+        if(userManager.login(user)) {
             request.getRequestDispatcher("pagees/user/home.jsp")
                     .forward(request, response);
         }else{

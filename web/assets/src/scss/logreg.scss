@@ -27,6 +27,15 @@
     //overflow: hidden;
 }
 
+.particles-js-canvas-el{
+    --height: 953px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: var(--height) !important;
+    width: 100%;
+}
 
 
 
