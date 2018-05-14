@@ -3,47 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/ImagePost.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AnimeListManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/VideoPost.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Comment.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanCheckExistence.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/logreg.scss</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_header.scss</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanAuthenticate.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/AnimeGender.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/FullyQueryable.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/main.js</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanSave.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/_base.scss</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/register.jsp</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/SQLUtil.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/auth/login.jsp</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanUpdate.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/RegisterController.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/profile.jsp</file>
             <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/home.jsp</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/PostManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_login-form.scss</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/lib/Validator.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGetSingle.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_twopanel.scss</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AnimeManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/LoginController.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AbstractManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/AnimeGenderManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/components/_button.scss</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/UserManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanDelete.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/User.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/AnimeList.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Anime.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/CommentManager.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/MySQLUtil.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/BaseModel.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGet.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGetAll.java</file>
-            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Post.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/profile.jsp</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_userheader.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/home.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/main.js</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/_base.scss</file>
         </group>
     </open-files>
 </project-private>

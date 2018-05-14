@@ -1,0 +1,22 @@
+// base modules
+
+@import 'base';
+@import 'variables';
+
+// components
+@import './components/button';
+
+
+
+// modules
+.logged-body{
+    @import './modules/userheader';
+    background: #eee;
+    
+    .page-body{
+        width: 80%;
+        margin-top: 4em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

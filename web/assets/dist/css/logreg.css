@@ -1,17 +1,13 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Apr 25, 2018, 2:24:30 PM
-    Author     : julian
-*/
+@import url("https://fonts.googleapis.com/css?family=Ruda:400,700|Varela+Round");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+}
+
+.body {
   font-family: sans-serif;
 }
 
@@ -22,4 +18,262 @@ a {
 
 a:focus, a:hover {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, select {
+  border: none;
+  outline: none;
+}
+
+input:focus, input:hover, select:focus, select:hover {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+/**
+
+button css component
+*/
+.button {
+  padding: .9em .5em;
+  font-family: "Ruda", sans-serif;
+  font-size: 1.08em;
+  text-align: center;
+}
+
+.button {
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.button--round {
+  border-radius: 10px;
+}
+
+.button--transparent {
+  background: transparent;
+}
+
+.button--primary {
+  background: #584c8e;
+  color: #fff;
+}
+
+.button--primary:hover, .button--primary:focus {
+  background: #4e437e;
+}
+
+.button--danger {
+  background: tomato;
+}
+
+.button--danger:hover, .button--danger:focus {
+  background: #ff4d2e;
+}
+
+.button--border {
+  border: 1px solid #ccc;
+}
+
+.auth-container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 1em;
+  padding-top: .5em;
+}
+
+.auth-container header .header__logo {
+  width: 100px;
+}
+
+.auth-container header span {
+  margin-left: 2em;
+  font-size: 1.3em;
+  font-family: "Varela Round", sans-serif;
+  color: #fff;
+}
+
+.auth-container .two-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.auth-container .two-panel .section {
+  width: 50%;
+  color: #fff;
+  margin-top: 1em;
+}
+
+.auth-container .two-panel .section__title, .auth-container .two-panel .section__title-small {
+  text-align: center;
+}
+
+.auth-container .two-panel .section__title {
+  font-size: 2em;
+  font-family: "Varela Round", sans-serif !important;
+  font-weight: bold;
+}
+
+.auth-container .two-panel .section__title-small {
+  font-size: .7em;
+}
+
+.auth-container #rias {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-width: 400px;
+  /*@media (max-width: 1199px) {
+        max-width: 400px;
+    }*/
+}
+
+@media (min-width: 1200px) {
+  .auth-container #rias {
+    max-width: 600px;
+  }
+}
+
+.auth-container #haruhi {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+}
+
+@media (max-width: 1024px) {
+  .auth-container #haruhi {
+    max-width: 300px;
+  }
+}
+
+.auth-container .section__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.auth-container .section__form .form__group {
+  margin: 20px 0;
+}
+
+.auth-container .section__form .form__label, .auth-container .section__form .form__input {
+  display: block;
+  font-family: "Ruda", sans-serif;
+}
+
+.auth-container .section__form .form__label {
+  text-align: left;
+  margin-left: 5px;
+  font-size: 1.1em;
+}
+
+.auth-container .section__form .form__input {
+  margin-top: 5px;
+  background: #4e437e;
+  padding: .8em 1.3em;
+  font-size: 1.2em;
+  color: #fff;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.auth-container .section__form .radio__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.auth-container .section__form .radio-input {
+  background: #39315d;
+  width: calc((100% / 3) - 10px);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 0 5px;
+}
+
+.auth-container .section__form .radio-input:last-child {
+  border: none;
+}
+
+.auth-container .section__form .radio-input label {
+  padding: .9em;
+  display: block;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.auth-container .section__form .radio-input input[type="radio"] {
+  display: none;
+}
+
+.auth-container .section__form .radio-input input[type="radio"]:checked ~ .radio-input__label {
+  background: #100e1a;
+  border-radius: 50px;
+}
+
+.auth-container .section__form .button__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.auth-container .section__form .button__group #terms-link {
+  color: #fff;
+}
+
+.auth-container .section__form .button__group #reg-link {
+  color: #fff;
+}
+
+.auth-container .section__form .button__group #reg-link:hover {
+  color: #ccc;
+}
+
+.auth-body {
+  min-height: 100vh;
+  background: #62559F !important;
+}
+
+.particles-js-canvas-el {
+  --height: 953px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: var(--height) !important;
+  width: 100%;
 }

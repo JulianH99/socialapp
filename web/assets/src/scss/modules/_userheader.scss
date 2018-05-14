@@ -1,0 +1,69 @@
+.user-header{
+    background: $primary;
+    color: #fff;
+    &, .user__menu, .user__info a {
+        display: flex;
+    }
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .user__info{
+        padding: 1em;
+        
+        a{
+            align-items: center;
+            justify-content: center;
+            
+            //max-width: 40%;
+            display: blok;
+            //position: relative;
+        }
+        
+        .user__picture{
+            img{
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -70%;
+                
+            }
+            
+        }
+        .user__name{
+            margin-left: 120px;
+            font-family: $primaryFont;
+            font-weight: 700;
+            
+        }
+    }
+    .user__links{
+        //border: 1px solid red;
+        height: 100%;
+        .user__menu{
+            list-style: none;
+            .menu__item a{
+                display: block;
+                padding: 1.5em;
+                //background: darken($primary, 30);
+                box-shadow: 0 -5px darken($primary, 30) inset;
+                transition: all .2s ease-out;
+                &:hover{
+                    box-shadow: 0 -100px darken($primary, 30) inset;
+                }
+                
+            }
+            #logout a{
+                box-shadow: 0 -5px tomato inset;
+                &:hover{
+                    box-shadow: 0 -100px tomato inset;
+                }
+            }
+        }
+    }
+    a{
+        color: inherit;
+        font-family: $contentFont;
+    }
+}

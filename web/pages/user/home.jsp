@@ -10,25 +10,26 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <% User user = (User) session.getAttribute("user");%>
-<% ArrayList<Post> posts = (ArrayList<Post>) session.getAttribute("posts"); %>
+<% ArrayList<Post> posts = (ArrayList<Post>) session.getAttribute("posts");%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
         <meta charset="utf-8">
+        <link href="./assets/dist/css/home.css" rel="stylesheet">
         <title><%= user.getName()%> - Profile</title>
     </head>
     <body class="logged-body">
         <div id="app" class="logged-container">
-            <header>
+            <header class="user-header">
                 <div class="user__info">
                     <a href="/socialapp/profile?id=${user.id}">
                         <div class="user__picture">
-                            <img src="/assets/dist/img/users/<%=user.getPicturePath()%>"
+                            <img src="assets/dist/img/users/<%=user.getPicturePath()%>"
                                  alt="<%= user.getName()%>">
                         </div>
                         <span class="user__name">
-                            ${user.name}
+                            <%= user.getName()%>
                         </span>
                     </a>
                 </div>
@@ -47,17 +48,20 @@
 
                 </div>
             </header>
-            <section class="posts">
-                <% if(posts != null || posts.size() == 0) { %>
+            <main class="page-body">
+                <section class="posts">
+                    <% if (posts != null && posts.size() == 0) { %>
                     <div class="posts__list">
-                        
+
                     </div>
-                <% } else { %>
+                    <% } else { %>
                     <div id="no-posts" class="alert alert-info">
                         <p>No hay posts disponibles</p>
                     </div>
-                <% } %>
-            </section>
+                    <% }%>
+                </section>
+            </main>
         </div>
+        <script src="assets/dist/main.js"></script>
     </body>
 </html>
