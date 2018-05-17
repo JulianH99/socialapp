@@ -147,6 +147,7 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
             
         }
         catch(SQLException ex) {
+            System.out.println("Error checking existence: " + ex.getMessage());
             return null;
         }
         finally{
@@ -157,11 +158,15 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
     @Override
     public boolean login(User user) {
         
-        User checkedUser = this.exists("username", user.getName());
+        System.out.println("Checking " + user.getName());
+        User checkedUser = this.exists("name", user.getName());
         
         if(checkedUser != null) {
+            System.out.println("User exists");
+            checkedUser.setPassword(user.getPassword());
             return this.checkPassword(checkedUser);
         }
+        System.out.println("User doesnt exist");
         return false;
         
     }
@@ -188,7 +193,11 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
             
             if(rs.next()) {
                 String hashedPassword = rs.getString("password");
-                return BCrypt.checkpw(user.getPassword(), hashedPassword);
+                
+               
+                System.out.println("Hola " + user.getPassword());
+                return hashedPassword.equals(user.getPassword());
+                //return BCrypt.checkpw(user.getPassword(), hashedPassword);
             }
             return false;
         }
@@ -199,7 +208,7 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
     
     
     public String hashPassword(String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
     

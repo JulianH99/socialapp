@@ -38,6 +38,8 @@ public class HomeController extends HttpServlet {
         user.setId(1L);
         user.setPicturePath("default.jpg");
         
+        
+        
         request.getSession().setAttribute("user", user);
         request.getSession().setAttribute("posts", null);
         

@@ -19,13 +19,13 @@ public class MySQLUtil extends SQLUtil{
     private final String PORT = "3306";
     private final String USER = "root";
     private final String PASSWORD = "sabertooth99";
-    private final String DB = "socialmedia";
+    private final String DB = "socialapp";
     private final String URL = "jdbc:mysql://localhost/%1$s";
 
     @Override
     public Connection getConnection() throws SQLException {
         try {
-            Class.forName("com.jdbc.mysql.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             
             String connectionString = String.format(URL, DB);
             
@@ -38,6 +38,7 @@ public class MySQLUtil extends SQLUtil{
             
         }catch (ClassNotFoundException e) {
             e.printStackTrace();
+            System.out.println("Error instantiating connection");
             return null;
         }
         

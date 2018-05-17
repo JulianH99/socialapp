@@ -50,7 +50,8 @@ public class LoginController extends HttpServlet {
     throws ServletException, IOException {
         
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String password = request.getParameter("password").trim();
+        System.out.println("Logging in");
         
         boolean validUsername = Validator.applyRule(username, "string");
         
@@ -67,11 +68,13 @@ public class LoginController extends HttpServlet {
         UserManager userManager = new UserManager(new MySQLUtil());
         
         if(userManager.login(user)) {
-            request.getRequestDispatcher("pagees/user/home.jsp")
+            response.getWriter().write("Hola");
+            request.getRequestDispatcher("pages/user/home.jsp")
                     .forward(request, response);
         }else{
             request.getSession().setAttribute("error", "Usuario o "
                     + "contraseña erroneos");
+            response.getWriter().write("Datos erroneos");
         }
         
         

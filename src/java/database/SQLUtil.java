@@ -42,10 +42,12 @@ abstract public class SQLUtil {
     public void setQuery(String query) throws SQLException {
         
         if (this.connection == null) {
+            System.out.println("Connection is null");
             this.connection = this.getConnection();
         }
         
         if (this.mode == PREPARED) {
+            System.out.println("Getting prepared statement");
             this.stmt = this.connection.prepareStatement(query);
         } else {
             this.stmt = this.connection.prepareCall(query);
