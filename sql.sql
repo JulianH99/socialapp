@@ -75,3 +75,41 @@ create table if not exists comments(
 );
 
 
+# sp
+
+
+alter table users add column picture_path varchar(200) not null default 'default.jpg' after email;
+
+
+
+use socialapp;
+
+delimiter //
+create or replace PROCEDURE getCommentsFor(in post BIGINT)
+BEGIN
+	
+	select id, content, user_score, user_id, user_score, post_id 
+	from comments
+	where post_id = @post;
+	
+END //
+
+delimiter ;
+
+
+# deinition of getAnimesFor user procedure
+delimiter //
+create or replace procedure getAnimesFor(in usr BIGINT)
+BEGIN
+	select a.id, a.name, a.image_path from anime_lists as al
+	join animes as a
+	on al.anime_id = a.id
+	where al.user_id = @usr;
+END //
+
+delimiter ;
+
+
+
+
+
