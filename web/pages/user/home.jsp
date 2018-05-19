@@ -50,9 +50,14 @@
             </header>
             <main class="page-body">
                 <section class="posts">
-                    <% if (posts != null && posts.size() == 0) { %>
+                    <% if (posts != null && posts.size() != 0) { %>
                     <div class="posts__list">
-
+                        <% for (Post post : posts) { %>
+                            <div class="post">
+                                
+                            </div>
+                            
+                        <% } %>
                     </div>
                     <% } else { %>
                     <div id="no-posts" class="alert alert-info">

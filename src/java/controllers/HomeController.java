@@ -6,12 +6,16 @@
 
 package controllers;
 
+import database.MySQLUtil;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.Post;
 import models.User;
+import models.managers.PostManager;
 
 /**
  *
@@ -32,16 +36,21 @@ public class HomeController extends HttpServlet {
     throws ServletException, IOException {
         //TODO: implement a valid way to handle user data
         
-        User user = new User();
+        System.out.println("Now we are in home controller");
         
-        user.setName("julianb99");
-        user.setId(1L);
-        user.setPicturePath("default.jpg");
+        User user = (User) request.getSession().getAttribute("user");
         
+        PostManager postManager = new PostManager(new MySQLUtil());
         
+        ArrayList<Post> posts = (ArrayList) postManager.all();
+        
+        System.out.println(posts.size());
         
         request.getSession().setAttribute("user", user);
-        request.getSession().setAttribute("posts", null);
+        
+        
+        
+        request.getSession().setAttribute("posts", posts);
         
         request.getRequestDispatcher("pages/user/home.jsp")
                 .forward(request, response);

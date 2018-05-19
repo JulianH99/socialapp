@@ -14,7 +14,7 @@ import models.User;
  */
 public interface CanAuthenticate<M extends User> {
     
-    public boolean login(M user);
+    public M login(M user);
     
     public boolean register();
     

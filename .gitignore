@@ -3,6 +3,5 @@ node_modules
 build
 /dist/
 /test/
-/nbproject/
 /assets/
 /web/WEB-INF/lib/

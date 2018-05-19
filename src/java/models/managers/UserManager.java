@@ -141,6 +141,9 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
             
             if (rs.next()){
                 newUser.setId(rs.getLong("id"));
+                newUser.setPassword(rs.getString("password"));
+                newUser.setPicturePath(rs.getString("picture_path"));
+                newUser.setName(rs.getString("name"));
                 return newUser;
             }
             return null;
@@ -156,18 +159,19 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
     }
 
     @Override
-    public boolean login(User user) {
+    public User login(User user) {
         
         System.out.println("Checking " + user.getName());
         User checkedUser = this.exists("name", user.getName());
         
         if(checkedUser != null) {
-            System.out.println("User exists");
-            checkedUser.setPassword(user.getPassword());
-            return this.checkPassword(checkedUser);
+            if(this.checkPassword(user.getPassword(), checkedUser.getPassword())){
+                return checkedUser;
+            }
+            
         }
         System.out.println("User doesnt exist");
-        return false;
+        return null;
         
     }
     
@@ -179,31 +183,8 @@ implements CanSave<User>, CanUpdate<User>, CanGetSingle<User>,
     }
     
     
-    public boolean checkPassword(User user) {
-        try{
-            String query = "select password from users where id = ?";
-            
-            this.dataSource.setQuery(query);
-            
-            PreparedStatement stmt = this.dataSource.getStatement();
-            
-            stmt.setLong(1, user.getId());
-            
-            ResultSet rs = stmt.executeQuery();
-            
-            if(rs.next()) {
-                String hashedPassword = rs.getString("password");
-                
-               
-                System.out.println("Hola " + user.getPassword());
-                return hashedPassword.equals(user.getPassword());
-                //return BCrypt.checkpw(user.getPassword(), hashedPassword);
-            }
-            return false;
-        }
-        catch(SQLException ex){
-            return false;
-        }
+    public boolean checkPassword(String candidate, String hashed) {
+        return hashed.equals(candidate);
     }
     
     

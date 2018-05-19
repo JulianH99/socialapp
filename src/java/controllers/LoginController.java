@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
         
         String username = request.getParameter("username");
         String password = request.getParameter("password").trim();
-        System.out.println("Logging in");
+        
         
         boolean validUsername = Validator.applyRule(username, "string");
         
@@ -65,12 +65,16 @@ public class LoginController extends HttpServlet {
         user.setName(username);
         user.setPassword(password);
         
+        
         UserManager userManager = new UserManager(new MySQLUtil());
         
-        if(userManager.login(user)) {
-            response.getWriter().write("Hola");
-            request.getRequestDispatcher("pages/user/home.jsp")
-                    .forward(request, response);
+        if((user = userManager.login(user)) != null) {
+            
+            System.out.println("Uer exists and is logging in");
+            request.getSession().setAttribute("user", user);
+            
+            response.sendRedirect("/socialapp/home");
+                      
         }else{
             request.getSession().setAttribute("error", "Usuario o "
                     + "contraseña erroneos");

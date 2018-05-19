@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/typePost/ImagePost.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/LoginController.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/UserManager.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanAuthenticate.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/home.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/.gitignore</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/_variables.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/controllers/HomeController.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/database/MySQLUtil.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/pages/user/home.jsp</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/managers/PostManager.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/web/assets/src/scss/modules/_userheader.scss</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/interfaces/CanGet.java</file>
+            <file>file:/home/julian/NetBeansProjects/socialapp/src/java/models/Post.java</file>
+        </group>
+    </open-files>
+</project-private>
